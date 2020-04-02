@@ -85,7 +85,9 @@ class Utility {
   static String readableDate(DateTime date) {
     return "${date.day < 10 ? "0${date.day}" : "${date.day}"}-"
         "${date.month < 10 ? "0${date.month}" : "${date.month}"}-"
-        "${date.year}";
+        "${date.year} "
+        "@ ${date.hour < 10 ? "0${date.hour}" : "${date.hour}"}"
+        ":${date.minute < 10 ? "0${date.minute}" : "${date.minute}"}";
   }
 
   static String extractFirstLetter(String s) {
