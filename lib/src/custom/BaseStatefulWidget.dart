@@ -4,15 +4,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base_tools/flutter_base_tools.dart';
 
-
 /// contains handy codethat can be easily used in a statefule widget
 /// project: flutter_base_tools
 /// @package: src.custom
-/// @author dammyololade <damola@kobo360.com>
+/// @author dammyololade <>
 /// created on 2019-05-24
 ///
 mixin BaseStatefulWidget {
-
   var scaffoldKey = GlobalKey<ScaffoldState>();
   String classTag;
 
@@ -31,16 +29,15 @@ mixin BaseStatefulWidget {
     this.showMessage(event.message);
   }
 
-  showMessage(String message, {bool success = false})
-  {
-    if(scaffoldKey.currentState != null) {
-      scaffoldKey.currentState.showSnackBar(
-          SnackBar(content: Text("$message"),
-            backgroundColor: success ? Colors.black : Colors.red,
-          )
-      );
-    }else{
-      print("the scaffoldkey is null, kindly attach the scaffoldkey to the scaffold");
+  showMessage(String message, {bool success = false}) {
+    if (scaffoldKey.currentState != null) {
+      scaffoldKey.currentState.showSnackBar(SnackBar(
+        content: Text("$message"),
+        backgroundColor: success ? Colors.black : Colors.red,
+      ));
+    } else {
+      print(
+          "the scaffoldkey is null, kindly attach the scaffoldkey to the scaffold");
     }
   }
 
@@ -77,7 +74,16 @@ mixin BaseStatefulWidget {
         });
   }
 
-  Future showBottomNotification(BuildContext context, {bool success = false, String title, String message}) {
+  Future showBottomNotification(BuildContext context,
+      {bool success = false, String title, String message}) {
+    if(message == null ) {
+      if(success) {
+        message = "Success";
+      } else {
+        message = "Oops an error has occurred, please try again later";
+      }
+
+    }
     return showModalBottomSheet(
         context: context,
         builder: (context) {
@@ -87,19 +93,33 @@ mixin BaseStatefulWidget {
               children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: Text(title ?? "Information", style: TextStyle(fontWeight: FontWeight.bold),),
+                  child: Text(
+                    title ?? "Information",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 10.0),
-                  child: success ? Icon(Icons.check_circle_outline, color: Colors.green, size: 42.0,) : Icon(Icons.error, color: Colors.red.shade200, size: 42.0,),
+                  child: success
+                      ? Icon(
+                          Icons.check_circle_outline,
+                          color: Colors.green,
+                          size: 42.0,
+                        )
+                      : Icon(
+                          Icons.error,
+                          color: Colors.red.shade200,
+                          size: 42.0,
+                        ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 5.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 30.0, vertical: 5.0),
                   child: Row(
                     children: <Widget>[
                       Expanded(
-                        child: Text("${message ?? "oops an error has occured,"
-                            " please try again"}",
+                        child: Text(
+                          "$message",
                           maxLines: 2,
                           textAlign: TextAlign.center,
                         ),
@@ -113,26 +133,27 @@ mixin BaseStatefulWidget {
         });
   }
 
-  navigateTo(BuildContext context, Widget newScreen) async{
-    return await Navigator.push(context, CupertinoPageRoute(builder: (context) => newScreen));
-
+  navigateTo(BuildContext context, Widget newScreen) async {
+    return await Navigator.push(
+        context, CupertinoPageRoute(builder: (context) => newScreen));
   }
 
   Widget errorWidget() {
     return ValueListenableBuilder(
         valueListenable: errorNotifier,
         builder: (context, String value, child) {
-          return value.isEmpty ? SizedBox() :
-          Row(
-            children: <Widget>[
-              Expanded(child: Text("$value",
-                style: TextStyle(color: Colors.red),
-                textAlign: TextAlign.center,
-              ))
-            ],
-          );
-        }
-    );
+          return value.isEmpty
+              ? SizedBox()
+              : Row(
+                  children: <Widget>[
+                    Expanded(
+                        child: Text(
+                      "$value",
+                      style: TextStyle(color: Colors.red),
+                      textAlign: TextAlign.center,
+                    ))
+                  ],
+                );
+        });
   }
-
 }

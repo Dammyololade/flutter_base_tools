@@ -3,7 +3,7 @@ import 'dart:io';
 ///
 /// project: flutter_base_tools
 /// @package: src.model
-/// @author dammyololade <damola@kobo360.com>
+/// @author dammyololade <>
 /// created on 2019-09-16
 class ImagePickerModel {
 

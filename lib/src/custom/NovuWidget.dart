@@ -166,7 +166,7 @@ class NovuWidgets {
                 width: 1
             )
         ),
-        contentPadding: EdgeInsets.all(4),
+        contentPadding: EdgeInsets.symmetric(horizontal: 4),
       ),
       controller: controller,
       maxLines: 1,
@@ -187,10 +187,11 @@ class NovuWidgets {
         Color textColor,
         int width = 180,
         double borderRadius = 6,
+        bool enabled = true,
         EdgeInsets padding = const EdgeInsets.symmetric(vertical: 12),
         double elevation = 3.0}) {
     return RaisedButton(
-      onPressed: () {
+      onPressed: !enabled ? null : () {
         callback != null ? callback() : print('Positive Callback Not Present');
       },
       color: bgColor ?? Config.APP_ACCENT_COLOR,

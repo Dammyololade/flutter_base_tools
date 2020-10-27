@@ -9,7 +9,7 @@ import 'package:image_picker/image_picker.dart';
 ///
 /// project: flutter_base_tools
 /// @package: src.helpers
-/// @author dammyololade <damola@kobo360.com>
+/// @author dammyololade <>
 /// created on 2019-05-04
 class ImageProcessor {
 

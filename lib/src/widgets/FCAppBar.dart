@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 ///A customized bottom appbar
 /// project: flutter_base_tools
 /// @package: src.custom
-/// @author dammyololade <damola@kobo360.com>
+/// @author dammyololade <>
 /// created on 2019-07-21
 // ignore: must_be_immutable
 class FCAppBar extends StatefulWidget {

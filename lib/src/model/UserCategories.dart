@@ -4,7 +4,7 @@ import 'package:flutter_base_tools/src/model/base_model.dart';
 ///
 /// project: flutter_base_tools
 /// @package: src.helpers
-/// @author dammyololade <damola@kobo360.com>
+/// @author dammyololade <>
 /// created on 2019-05-07
 class UserCategories extends BaseModel{
   static String cUserId = "userId";

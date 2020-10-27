@@ -4,7 +4,7 @@ import 'package:flutter_base_tools/src/model/UploadableImage.dart';
 ///
 /// project: flutter_base_tools
 /// @package: src.model
-/// @author dammyololade <damola@kobo360.com>
+/// @author dammyololade <>
 /// created on 2019-05-05
 class CrashableModel {
   List<UploadableImage> uploadableImages;

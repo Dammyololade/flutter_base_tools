@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 ///
 /// project: flutter_base_tools
 /// @package: src.helpers
-/// @author dammyololade <damola@kobo360.com>
+/// @author dammyololade <>
 /// created on 2019-07-18
 class Config {
   static Color APP_BACKGROUND_COLOR = Color(0xffFDFBF6);

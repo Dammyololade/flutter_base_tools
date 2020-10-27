@@ -83,6 +83,7 @@ class Utility {
   }
 
   static String readableDate(DateTime date) {
+    date = date.toLocal();
     return "${date.day < 10 ? "0${date.day}" : "${date.day}"}-"
         "${date.month < 10 ? "0${date.month}" : "${date.month}"}-"
         "${date.year} "
@@ -120,9 +121,62 @@ class Utility {
         message = response.statusMessage;
       }
     } catch (error, stackTrace) {
-      message = response?.statusMessage ?? error.toString();
+      message = response?.statusMessage ?? "Oops an error occurred "
+          "please check your internet connection and try again";
     }
     return message;
+  }
+
+  static String getMonthEquivalence(int month) {
+    String eqvMnt = "NF";
+    switch (month) {
+      case 1:
+        eqvMnt = "January";
+        break;
+      case 2:
+        eqvMnt = "Feburary";
+        break;
+      case 3:
+        eqvMnt = "March";
+        break;
+      case 4:
+        eqvMnt = "April";
+        break;
+      case 5:
+        eqvMnt = "May";
+        break;
+      case 6:
+        eqvMnt = "June";
+        break;
+      case 7:
+        eqvMnt = "July";
+        break;
+      case 8:
+        eqvMnt = "August";
+        break;
+      case 9:
+        eqvMnt = "September";
+        break;
+      case 10:
+        eqvMnt = "October";
+        break;
+      case 11:
+        eqvMnt = "November";
+        break;
+      case 12:
+        eqvMnt = "December";
+        break;
+    }
+    return eqvMnt;
+  }
+
+  static String readAbleDate(DateTime vDate) {
+    String value = "";
+    try {
+      value = "${getMonthEquivalence(vDate.month)} ${vDate.day},"
+          " ${vDate.year}";
+    } catch (err) {}
+    return value;
   }
 
 }

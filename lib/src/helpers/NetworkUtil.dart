@@ -4,9 +4,9 @@ import 'package:flutter_base_tools/src/Database/SessionManager.dart';
 import 'package:flutter_base_tools/src/helpers/Event.dart';
 
 ///
-/// project: web_mediks
+/// project:
 /// @package: helpers
-/// @author dammyololade <damola@kobo360.com>
+/// @author dammyololade <>
 /// created on 2019-06-14
 class NetworkUtil {
   String classTag;
@@ -20,9 +20,10 @@ class NetworkUtil {
 
   Dio initDio() {
     dio = new Dio(BaseOptions(
-      connectTimeout: 30000,
-      receiveTimeout: 30000,
+      connectTimeout: 50000,
+      receiveTimeout: 50000,
     ));
+    dio.interceptors.add(LogInterceptor());
   }
 
   Future<Response> get(String url) async {

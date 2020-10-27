@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 ///A custom textfield that overirdes the original Textfrom field
 /// project: flutter_base_tools
 /// @package: src.widgets
-/// @author dammyololade <damola@kobo360.com>
+/// @author dammyololade <>
 /// created on 2019-07-21
 
 typedef FCTextValidator = Function(String value);

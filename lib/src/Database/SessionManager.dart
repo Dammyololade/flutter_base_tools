@@ -36,9 +36,26 @@ abstract class SessionManager
   static const String KEY_USER_CATEGORY_ID = 'user_category_id';
   static const String KEY_FAV_ITEM_IDS = 'fav_item_ids';
   static const String KEY_TOKEN = 'token';
+  static const String KEY_REFERRAL_ID = 'referral_id';
+  static const String KEY_CART = 'cart';
+  static const String KEY_ACCOUNT_NUMBER = 'account_number';
+  static const String KEY_BANK_NAME = 'bank_name';
+  static const String KEY_ACCOUNT_NAME = 'account_name';
 
   static set fcmToken(String fcmtoken) => sharedPreferences.setString(KEY_FCM, fcmtoken);
   static String get fcmToken => sharedPreferences.getString(KEY_FCM) ?? '';
+
+  static set bankName(String name) => sharedPreferences.setString(KEY_BANK_NAME, name);
+  static String get bankName => sharedPreferences.getString(KEY_BANK_NAME) ?? '';
+
+  static set accountNumber(String number) => sharedPreferences.setString(KEY_ACCOUNT_NUMBER, number);
+  static String get accountNumber => sharedPreferences.getString(KEY_ACCOUNT_NUMBER) ?? '';
+
+  static set accountName(String name) => sharedPreferences.setString(KEY_ACCOUNT_NAME, name);
+  static String get accountName => sharedPreferences.getString(KEY_ACCOUNT_NAME) ?? '';
+
+  static set referralId(String id) => sharedPreferences.setString(KEY_REFERRAL_ID, id);
+  static String get referralId => sharedPreferences.getString(KEY_REFERRAL_ID) ?? '';
 
   static set userName(String userName) => sharedPreferences.setString(KEY_USER_NAME, userName);
   static String get userName => sharedPreferences.getString(KEY_USER_NAME) ?? '';
@@ -116,5 +133,8 @@ abstract class SessionManager
   static void logOut() {
     sharedPreferences.clear();
   }
+
+  static String get cart => sharedPreferences.getString(KEY_CART) ?? '';
+  static set cart(String cart) => sharedPreferences.setString(KEY_CART, cart);
 
 }

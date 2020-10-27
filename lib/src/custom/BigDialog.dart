@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 ///
 /// project: kobo_mobile_core
 /// @package: 
-/// @author dammyololade <damola@kobo360.com>
+/// @author dammyololade <>
 /// created on 2019-06-25
 
 
