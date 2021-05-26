@@ -16,8 +16,11 @@ class ImageProcessor {
   Future<ImagePickerModel> getImage(ImageSource imageSource) async {
     ImagePickerModel model = ImagePickerModel(success: false);
     try{
-      model.file = await ImagePicker.pickImage(source: imageSource);
-      if(model.file != null) model.success = true;
+      var pickedFile = await ImagePicker().getImage(source: imageSource);
+      if(pickedFile != null) {
+        model.file = File(pickedFile.path);
+        model.success = true;
+      }
     } catch(error) {
       model.message = error.toString();
     }
