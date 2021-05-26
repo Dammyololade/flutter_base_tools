@@ -38,14 +38,14 @@ class NetworkUtil {
     } on DioError catch (e) {
       response = e.response;
       switch (e.type) {
-        case DioErrorType.CANCEL:
-        case DioErrorType.CONNECT_TIMEOUT:
-        case DioErrorType.SEND_TIMEOUT:
-        case DioErrorType.RECEIVE_TIMEOUT:
-        case DioErrorType.DEFAULT:
+        case DioErrorType.cancel:
+        case DioErrorType.connectTimeout:
+        case DioErrorType.sendTimeout:
+        case DioErrorType.receiveTimeout:
+        case DioErrorType.other:
           eventBus.fire(ErrorEvent(e.message, classTag: classTag));
           break;
-        case DioErrorType.RESPONSE:
+        case DioErrorType.response:
           validateDioResponse(e.response);
           break;
       }
@@ -67,14 +67,14 @@ class NetworkUtil {
     } on DioError catch (e) {
       response = e.response;
       switch (e.type) {
-        case DioErrorType.CANCEL:
-        case DioErrorType.CONNECT_TIMEOUT:
-        case DioErrorType.SEND_TIMEOUT:
-        case DioErrorType.RECEIVE_TIMEOUT:
-        case DioErrorType.DEFAULT:
+        case DioErrorType.cancel:
+        case DioErrorType.connectTimeout:
+        case DioErrorType.sendTimeout:
+        case DioErrorType.receiveTimeout:
+        case DioErrorType.other:
           eventBus.fire(ErrorEvent(e.message, classTag: classTag));
           break;
-        case DioErrorType.RESPONSE:
+        case DioErrorType.response:
           validateDioResponse(e.response);
           break;
       }
@@ -96,14 +96,14 @@ class NetworkUtil {
     } on DioError catch (e) {
       response = e.response;
       switch (e.type) {
-        case DioErrorType.CANCEL:
-        case DioErrorType.CONNECT_TIMEOUT:
-        case DioErrorType.SEND_TIMEOUT:
-        case DioErrorType.RECEIVE_TIMEOUT:
-        case DioErrorType.DEFAULT:
+        case DioErrorType.cancel:
+        case DioErrorType.connectTimeout:
+        case DioErrorType.sendTimeout:
+        case DioErrorType.receiveTimeout:
+        case DioErrorType.other:
           eventBus.fire(ErrorEvent(e.message, classTag: classTag));
           break;
-        case DioErrorType.RESPONSE:
+        case DioErrorType.response:
           validateDioResponse(e.response);
           break;
       }
@@ -126,14 +126,14 @@ class NetworkUtil {
     } on DioError catch (e) {
       response = e.response;
       switch (e.type) {
-        case DioErrorType.CANCEL:
-        case DioErrorType.CONNECT_TIMEOUT:
-        case DioErrorType.SEND_TIMEOUT:
-        case DioErrorType.RECEIVE_TIMEOUT:
-        case DioErrorType.DEFAULT:
+        case DioErrorType.cancel:
+        case DioErrorType.connectTimeout:
+        case DioErrorType.sendTimeout:
+        case DioErrorType.receiveTimeout:
+        case DioErrorType.other:
           eventBus.fire(ErrorEvent(e.message, classTag: classTag));
           break;
-        case DioErrorType.RESPONSE:
+        case DioErrorType.response:
           validateDioResponse(e.response);
           break;
       }
